@@ -12,7 +12,15 @@
  * @returns  {Object[]}
  */
 module.exports = function test2() {
-  let results;
+  let results = [];
+  var data = require('./test_data.json');
+  for (var i=0;i < data.length;i++){
+    var person = data[i];
+    if (person.last_name == "Simpson"){
+      results.push(person);
+      person["example"] = person.first_name + " " + person.last_name + " says " + person.catchphrase;
+    }
+  }
 
   // Write your code here.  The pre-written lines above and below are just suggestions, feel free to delete
   // them and start fresh.

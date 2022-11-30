@@ -12,6 +12,11 @@
  */
 module.exports = function test1() {
   let results;
+  results = require('./test_data.json');
+  for (var i=0;i < results.length;i++){
+    var person = results[i];
+    person["example"] = person.first_name + " " + person.last_name + " says " + person.catchphrase;
+  }
 
   // Write your code here.  The pre-written lines above and below are just suggestions, feel free to delete
   // them and start fresh.
